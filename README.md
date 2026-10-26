@@ -29,20 +29,41 @@ Some skills call others. Install the ones they need too:
 
 ## Install
 
+Keep one shared checkout and link its skills into both Claude Code and Codex
+(including Codex sessions in T3). On macOS or Linux:
+
 ```bash
-git clone https://github.com/pbrazdil/skills.git petr-skills
+mkdir -p "$HOME/.local/share"
+git clone https://github.com/pbrazdil/skills.git "$HOME/.local/share/pbrazdil-skills"
 
-# Claude Code
-mkdir -p ~/.claude/skills
-cp -Rn petr-skills/skills/. ~/.claude/skills/
-
-# Codex
-mkdir -p ~/.codex/skills
-cp -Rn petr-skills/skills/. ~/.codex/skills/
+for skill in "$HOME/.local/share/pbrazdil-skills/skills/"*; do
+  for destination in "$HOME/.claude/skills" "${CODEX_HOME:-$HOME/.codex}/skills"; do
+    mkdir -p "$destination"
+    target="$destination/$(basename "$skill")"
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      printf 'Keeping existing skill: %s\n' "$target"
+    else
+      ln -s "$skill" "$target"
+    fi
+  done
+done
 ```
 
-These commands keep existing skill files. To update an installed skill, review
-the differences and replace that skill deliberately.
+If the shared checkout already exists, skip the clone command. Existing files,
+directories, and symlinks are left untouched. When migrating from copied
+skills, compare them with the shared versions and move the old copies to a
+backup directory before rerunning the link loop. Unrelated skills stay in place.
+
+### Update
+
+Pull once to update the shared skills for both applications:
+
+```bash
+git -C "$HOME/.local/share/pbrazdil-skills" pull --ff-only
+```
+
+Updates apply to skills already linked to the checkout. If new skill folders
+are added, rerun the link loop to make them available in both applications.
 
 ## Requirements
 
@@ -57,7 +78,7 @@ the differences and replace that skill deliberately.
 Shared language and working preferences live in [AGENTS.md](AGENTS.md).
 The skills themselves describe their individual workflows.
 
-The installation commands above copy only the skills, not `AGENTS.md`. To use
+The installation commands above link only the skills, not `AGENTS.md`. To use
 these preferences in other projects, merge the relevant instructions into the
 `AGENTS.md` or `CLAUDE.md` that your agent loads there. Preserve existing
 project instructions rather than replacing them.
