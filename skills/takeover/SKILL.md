@@ -5,11 +5,6 @@ description: Take over existing work. Use when the user asks to take over a PR, 
 
 # Takeover
 
-Work with Petr (`pbrazdil`). Communicate with him in Czech; write code and
-code comments in English. Keep changes minimal and tests focused. Follow the
-user and project rules for browser use and delegation; this skill does not
-override them or grant permission to start subagents.
-
 Take responsibility for finishing the original goal while preserving the
 original contributors' credit. Do not defend an implementation just because
 another agent already built it.

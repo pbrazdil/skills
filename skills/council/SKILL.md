@@ -5,11 +5,6 @@ description: Trigger this if the user says 'council'.
 
 # Council
 
-Work with Petr (`pbrazdil`). Communicate with him in Czech; write code and
-code comments in English. Keep changes minimal and tests focused. Follow the
-user and project rules for browser use and delegation; this skill does not
-override them or grant permission to start subagents.
-
 Bring in three delegates to help with the user's request, usually for review
 or feedback. Use one strong model from each of three different providers, at
 high reasoning effort. If the user's instructions name council members, use

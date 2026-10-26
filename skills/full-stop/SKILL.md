@@ -5,11 +5,6 @@ description: Trigger this if the user says 'full stop'.
 
 # Full Stop
 
-Work with Petr (`pbrazdil`). Communicate with him in Czech; write code and
-code comments in English. Keep changes minimal and tests focused. Follow the
-user and project rules for browser use and delegation; this skill does not
-override them or grant permission to start subagents.
-
 Do the same work as `full-send`, but stop with the PR ready for the user to merge.
 Never merge it.
 

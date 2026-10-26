@@ -5,11 +5,6 @@ description: Trigger this if the user says 'full send'.
 
 # Full Send
 
-Work with Petr (`pbrazdil`). Communicate with him in Czech; write code and
-code comments in English. Keep changes minimal and tests focused. Follow the
-user and project rules for browser use and delegation; this skill does not
-override them or grant permission to start subagents.
-
 If the user triggered this, it's because they are not watching this thread, and
 they want you to complete the work end-to-end autonomously. Your updates and
 your final message go unread until long after you stop. You own the work from

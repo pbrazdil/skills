@@ -5,11 +5,6 @@ description: Use when the user says "sol loop".
 
 # sol-loop
 
-Work with Petr (`pbrazdil`). Communicate with him in Czech; write code and
-code comments in English. Keep changes minimal and tests focused. Follow the
-user and project rules for browser use and delegation; this skill does not
-override them or grant permission to start subagents.
-
 This is a workflow for making your code changes more correct before (or
 sometimes after) filing a pull request. tl;dr - use OpenAI's GPT Sol to review
 your code in a loop.

@@ -5,11 +5,6 @@ description: Monitor a pull request through review and CI. Use when the user ask
 
 # Babysit PR
 
-Work with Petr (`pbrazdil`). Communicate with him in Czech; write code and
-code comments in English. Keep changes minimal and tests focused. Follow the
-user and project rules for browser use and delegation; this skill does not
-override them or grant permission to start subagents.
-
 Many repos have AI review bots. They're helpful, even if they are not always
 right.
 

@@ -7,11 +7,6 @@ description: >-
 
 # Modernize
 
-Work with Petr (`pbrazdil`). Communicate with him in Czech; write code and
-code comments in English. Keep changes minimal and tests focused. Follow the
-user and project rules for browser use and delegation; this skill does not
-override them or grant permission to start subagents.
-
 Modernize the idea, not just the branch. A clean rebase does not prove that the
 PR still belongs in the product.
 

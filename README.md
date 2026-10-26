@@ -54,15 +54,13 @@ the differences and replace that skill deliberately.
 
 ## Personal defaults
 
-These skills are configured for Petr (`pbrazdil`):
+Shared language and working preferences live in [AGENTS.md](AGENTS.md).
+The skills themselves describe their individual workflows.
 
-- Communicate with me in Czech; write code and code comments in English.
-- Prefer the smallest useful change, type safety, and focused tests.
-- Follow the active project’s browser and delegation rules.
-- Attribute agent-authored GitHub comments to the model acting on my behalf.
-
-Keep project-specific settings in `AGENTS.md` or `CLAUDE.md`. Installing a
-skill does not authorize subagents or override project permissions.
+The installation commands above copy only the skills, not `AGENTS.md`. To use
+these preferences in other projects, merge the relevant instructions into the
+`AGENTS.md` or `CLAUDE.md` that your agent loads there. Preserve existing
+project instructions rather than replacing them.
 
 ## Origin and license
 
