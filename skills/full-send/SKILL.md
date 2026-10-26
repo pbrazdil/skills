@@ -74,8 +74,8 @@ Full confidence means all of these are true on the latest commit:
 
 - Your proof covers every change in the diff.
 - Required checks are green.
-- Review bots have finished, and each finding is fixed or dismissed with a
-  written reason.
+- Repository-required reviews have finished, and each finding is fixed or
+  dismissed with a written reason. No particular review bot is required.
 - No human review still requests changes.
 - The branch is up to date with the default branch, and GitHub reports it as
   mergeable.

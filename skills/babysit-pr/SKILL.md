@@ -48,10 +48,14 @@ It prints one line per real event. It exits 0 when the `--until` condition is
 met or the PR merges, 1 when it needs you (a required check failed, conflicts,
 unresolved threads, PR closed), and 2 on bad input.
 
-- `ready` (default): required checks green, Greptile or Macroscope reviewed the
-  head, and no unresolved threads. Use this to babysit.
-- `green`: required checks only. Use it when the repo has no Greptile or
-  Macroscope.
+- `ready` (default): checks green, repository review requirements satisfied,
+  no unresolved threads, and an open, non-draft, mergeable PR. No particular
+  review bot is required. Use this to babysit.
+- `green`: checks only, without checking review readiness.
+
+When no required checks are configured, all reported checks must pass. A PR
+with no checks can be ready after two stable polls; this is not proof that
+tests ran. Verify the project’s required validation separately.
 - `any-change`: exit on the first event.
 
 In Claude Code, run it with the Monitor tool (`timeout_ms: 3600000`), so each
@@ -80,11 +84,9 @@ finding against the source before changing code. Fix real findings and CI
 failures, distinguish repository failures from infrastructure flakes, and reply
 with a written reason when dismissing false positives.
 
-If the repo has `.macroscope/check-run-agents/*.md`, read those rules before you
-reply to a Macroscope finding. Its findings cite them.
-
-CodeRabbit is advisory. Treat its findings like any other finding, but never
-wait for it and never hold a merge for it.
+Follow the repository’s configured checks and review requirements. Do not
+require any particular review provider. Evaluate findings from whatever
+reviewers are present, and do not ignore a required check based on its vendor.
 
 If a review bot leaves feedback you believe is not worth addressing, reply with
 a written reason and resolve the comment. Use the `leaving-pr-comments` skill
